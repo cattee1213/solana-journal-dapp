@@ -11,7 +11,7 @@ import {
 import { useWallet } from "@solana/wallet-adapter-react";
 
 export function SolanajournaldappCreate() {
-  const { createEntry, accounts } = useSolanajournaldappProgram();
+  const { createEntry, accounts, programId } = useSolanajournaldappProgram();
   const { publicKey } = useWallet();
   const { deleteEntry } = useSolanajournaldappProgramAccount({
     account: publicKey as PublicKey,
