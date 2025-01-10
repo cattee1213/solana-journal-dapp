@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/solanajournaldapp.json`.
  */
 export type Solanajournaldapp = {
-  "address": "EdDx2AqkYMCyaEP9aCKeYVjPdm5naw1KMBuWoqGoxVFA",
+  "address": "4jKysN18C1QfBvNNKbRCx7pBy21eeLiiyxLfuETpnG16",
   "metadata": {
     "name": "solanajournaldapp",
     "version": "0.1.0",
