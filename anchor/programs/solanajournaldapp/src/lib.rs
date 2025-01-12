@@ -37,6 +37,7 @@ pub mod solanajournaldapp {
 
         let journal_entry = &mut ctx.accounts.journal_entry;
         journal_entry.message = message;
+        journal_entry.timestamp = clock::Clock::get()?.unix_timestamp;
 
         Ok(())
     }
@@ -75,7 +76,7 @@ pub struct CreateEntry<'info> {
 #[instruction(title:String,message:String)]
 pub struct UpdateEntry<'info> {
     #[account(mut,seeds=[title.as_bytes(),owner.key().as_ref()],bump,
-    realloc = 8 + 32 + 1 + 4 +title.len() + 4 +message.len(),
+    realloc = 8 + 32 + 4 +title.len() + 4 +message.len() + 8,
     realloc::payer=owner,
     realloc::zero = true
 )]

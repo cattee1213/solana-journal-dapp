@@ -86,7 +86,7 @@ export function useSolanajournaldappProgramAccount({ account }: { account: Publi
 
   const updateEntry = useMutation<string, Error, any>({
     mutationKey: ['journalEntry', 'update', { cluster }],
-    mutationFn: async ({ title, message }) => {
+    mutationFn: async ({ title, message, owner }) => {
       return program.methods.updateJournalEntry(title, message).rpc();
     },
     onSuccess: (signature) => {
