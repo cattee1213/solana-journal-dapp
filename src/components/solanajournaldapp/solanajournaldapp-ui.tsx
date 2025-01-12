@@ -25,7 +25,10 @@ export function JournalCreate() {
   const isFormValid = title.trim() !== "" && message.trim() !== "";
 
   const handlerSubmit = () => {
-    createEntry.mutateAsync({ title, message, owner: publicKey });
+    createEntry.mutateAsync({ title, message, owner: publicKey }).then(() => {
+      setTitle("");
+      setMessage("");
+    });
   };
 
 
