@@ -19,7 +19,7 @@ pub mod solanajournaldapp {
 
         let journal_entry = &mut ctx.accounts.journal_entry;
         journal_entry.owner = ctx.accounts.owner.key();
-        journal_entry.title = title.clone();
+        journal_entry.title = title;
         journal_entry.message = message;
         journal_entry.timestamp = clock::Clock::get()?.unix_timestamp;
 
